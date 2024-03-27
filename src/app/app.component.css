@@ -15,3 +15,8 @@
   min-width: 40vw;
   margin-bottom: 5vh;
 }
+
+/* estilo botones */
+.boton-navegacion {
+  height: 5vh;
+}
