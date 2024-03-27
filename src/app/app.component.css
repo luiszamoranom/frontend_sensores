@@ -13,10 +13,26 @@
   justify-content: space-between;
   max-width: 40vw;
   min-width: 40vw;
+  margin-top: 5vh;
   margin-bottom: 5vh;
 }
 
 /* estilo botones */
 .boton-navegacion {
   height: 5vh;
+}
+
+/* estilo contenido en router link*/
+.container-router {
+  min-height: 60vh;
+}
+
+/* titulo app */
+.container-app-titulo {
+  min-width: 80vw;
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
