@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {HumedadService} from "../../services/humedad.service";
 import {JsonPipe} from "@angular/common";
 import {ResponseAPI} from "../../dtos/ResponseAPI";
+import {interval, Subject, takeUntil} from "rxjs";
 
 @Component({
   selector: 'app-lista-humedad',
@@ -20,26 +21,29 @@ export class ListaHumedadComponent implements OnInit{
   protected humedad_promedio: number|undefined = undefined
   protected humedad_maxima: number|undefined = undefined
   protected humedad_minima: number|undefined = undefined
+  private destroy$ = new Subject<void>();
 
   ngOnInit() {
-    this._humedadService.fetchAll().subscribe(
-      response => this.humedades = response
-    )
+    interval(500).pipe(takeUntil(this.destroy$)).subscribe(() => {
+      this._humedadService.fetchAll().subscribe(
+        response => this.humedades = response
+      )
 
-    this._humedadService.fetchMasReciente().subscribe(
-      response => this.humedad_masReciente = response
-    )
+      this._humedadService.fetchMasReciente().subscribe(
+        response => this.humedad_masReciente = response
+      )
 
-    this._humedadService.fetchPromedio().subscribe(
-      response => this.humedad_promedio = response
-    )
+      this._humedadService.fetchPromedio().subscribe(
+        response => this.humedad_promedio = response
+      )
 
-    this._humedadService.fetchMaxima().subscribe(
-      response => this.humedad_maxima = response
-    )
+      this._humedadService.fetchMaxima().subscribe(
+        response => this.humedad_maxima = response
+      )
 
-    this._humedadService.fetchMinimo().subscribe(
-      response => this.humedad_minima = response
-    )
+      this._humedadService.fetchMinimo().subscribe(
+        response => this.humedad_minima = response
+      )
+    })
   }
 }
