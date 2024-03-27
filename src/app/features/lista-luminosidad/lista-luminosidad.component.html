@@ -1,4 +1,4 @@
-<div class="container-lista-humedad-estadisticas-generales">
+<div class="container-lista-comun-estadisticas-generales">
   <div>
     @if(luminosidad_masReciente?.valor){
       <p> <b>Más reciente:</b> {{luminosidad_masReciente?.valor}} </p>
@@ -32,23 +32,23 @@
   </div>
 </div>
 
-<div class="container-lista-humedad-tabla">
+<div class="container-lista-comun-tabla">
   @if(luminosidades.length>0){
     <table>
-      <tr class="fila-en-tabla-humedad">
-        <th class="columna-en-tabla-humedad">Valor</th>
-        <th class="columna-en-tabla-humedad">Fecha creación</th>
+      <tr class="fila-en-tabla-comun">
+        <th class="columna-en-tabla-comun">Valor</th>
+        <th class="columna-en-tabla-comun">Fecha creación</th>
       </tr>
 
       @for (humedad of luminosidades ; track humedad.id){
-        <tr class="fila-en-tabla-humedad">
-          <td  class="columna-en-tabla-humedad">
-            <div class="texto-dentro-de-columna-en-tabla-humedad">
+        <tr class="fila-en-tabla-comun">
+          <td  class="columna-en-tabla-comun">
+            <div class="texto-dentro-de-columna-en-tabla-comun">
               {{humedad.valor}}
             </div>
           </td>
-          <td  class="columna-en-tabla-humedad">
-            <div class="texto-dentro-de-columna-en-tabla-humedad">
+          <td  class="columna-en-tabla-comun">
+            <div class="texto-dentro-de-columna-en-tabla-comun">
               {{humedad.createdAt}}
             </div>
           </td>
