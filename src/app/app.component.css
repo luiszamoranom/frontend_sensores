@@ -1,0 +1,17 @@
+.container-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container-dashboard-botones {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 40vw;
+  min-width: 40vw;
+  margin-bottom: 5vh;
+}
