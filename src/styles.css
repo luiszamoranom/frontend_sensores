@@ -1,3 +1,54 @@
 * {
   margin: 0;
 }
+
+/* estilos para listas */
+.container-lista-comun-estadisticas-generales {
+  display: flex;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  flex-direction: row;
+  width: 80vw;
+  justify-content: space-between;
+}
+
+
+.container-lista-comun-tabla {
+  margin-top: 5vh;
+  display: flex;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  flex-direction: row;
+  width: 80vw;
+  justify-content: space-between;
+}
+
+.fila-en-tabla-comun {
+  min-width: 80vw;
+  max-width: 80vw;
+}
+
+.columna-en-tabla-comun {
+  min-width: 40vw;
+}
+
+.texto-dentro-de-columna-en-tabla-comun {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BORDES EN LA TABLA */
+.container-lista-comun-tabla table {
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.fila-en-tabla-comun {
+  border-bottom: 1px solid black;
+}
+
+.columna-en-tabla-comun {
+  border-right: 1px solid black;
+}
+
