@@ -1,0 +1,57 @@
+<div class="container-lista-humedad-estadisticas-generales">
+  <div>
+    @if(humedad_masReciente?.valor){
+      <p> <b>Más reciente:</b> {{humedad_masReciente?.valor}} </p>
+    } @else {
+      <p> <b>Más reciente:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+
+  <div>
+    @if(humedad_promedio){
+      <p> <b>Promedio:</b> {{humedad_promedio}} </p>
+    } @else {
+      <p> <b>Promedio:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+
+  <div>
+    @if(humedad_maxima){
+      <p> <b>Máxima:</b> {{humedad_maxima}} </p>
+    } @else {
+      <p> <b>Máxima:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+
+  <div>
+    @if(humedad_minima){
+      <p> <b>Mínima:</b> {{humedad_minima}} </p>
+    } @else {
+      <p> <b>Mínima:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+</div>
+
+<div class="container-lista-humedad-tabla">
+  <table>
+    <tr class="fila-en-tabla-humedad">
+      <th class="columna-en-tabla-humedad">Valor</th>
+      <th class="columna-en-tabla-humedad">Fecha creación</th>
+    </tr>
+
+    @for (humedad of humedades ; track humedad.id){
+      <tr class="fila-en-tabla-humedad">
+        <td  class="columna-en-tabla-humedad">
+          <div class="texto-dentro-de-columna-en-tabla-humedad">
+            {{humedad.valor}}
+          </div>
+        </td>
+        <td  class="columna-en-tabla-humedad">
+          <div class="texto-dentro-de-columna-en-tabla-humedad">
+            {{humedad.createdAt}}
+          </div>
+        </td>
+      </tr>
+    }
+  </table>
+</div>
