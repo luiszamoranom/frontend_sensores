@@ -1,10 +1,15 @@
 <div class="container-app">
+  <div class="container-app-titulo">
+    <h1>Proyecto Nuevas Tecnologias Computacionales</h1>
+  </div>
   <div class="container-dashboard-botones">
-    <button>Dashboard</button>
-    <button>Temperatura</button>
-    <button>Luminosidad</button>
-    <button>Humedad</button>
+    <button class="boton-navegacion" routerLink="/dashboard">Dashboard</button>
+    <button class="boton-navegacion" routerLink="/temperatura">Temperatura</button>
+    <button class="boton-navegacion" routerLink="/luminosidad">Luminosidad</button>
+    <button class="boton-navegacion" routerLink="/humedad">Humedad</button>
   </div>
 
-  <router-outlet/>
+  <div class="container-router">
+    <router-outlet/>
+  </div>
 </div>

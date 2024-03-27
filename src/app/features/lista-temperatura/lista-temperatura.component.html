@@ -1,0 +1,61 @@
+<div class="container-lista-comun-estadisticas-generales">
+  <div>
+    @if(temperatura_masReciente?.valor){
+      <p> <b>Más reciente:</b> {{temperatura_masReciente?.valor}} </p>
+    } @else {
+      <p> <b>Más reciente:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+
+  <div>
+    @if(temperatura_promedio){
+      <p> <b>Promedio:</b> {{temperatura_promedio}} </p>
+    } @else {
+      <p> <b>Promedio:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+
+  <div>
+    @if(temperatura_maxima){
+      <p> <b>Máxima:</b> {{temperatura_maxima}} </p>
+    } @else {
+      <p> <b>Máxima:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+
+  <div>
+    @if(temperatura_minima){
+      <p> <b>Mínima:</b> {{temperatura_minima}} </p>
+    } @else {
+      <p> <b>Mínima:</b> aún no se emite el primer valor</p>
+    }
+  </div>
+</div>
+
+<div class="container-lista-comun-tabla">
+  @if(temperaturas.length>0){
+    <table>
+      <tr class="fila-en-tabla-comun">
+        <th class="columna-en-tabla-comun">Valor</th>
+        <th class="columna-en-tabla-comun">Fecha creación</th>
+      </tr>
+
+      @for (humedad of temperaturas ; track humedad.id){
+        <tr class="fila-en-tabla-comun">
+          <td  class="columna-en-tabla-comun">
+            <div class="texto-dentro-de-columna-en-tabla-comun">
+              {{humedad.valor}}
+            </div>
+          </td>
+          <td  class="columna-en-tabla-comun">
+            <div class="texto-dentro-de-columna-en-tabla-comun">
+              {{humedad.createdAt}}
+            </div>
+          </td>
+        </tr>
+      }
+    </table>
+  } @else {
+    <p>Sin valores de temperatura</p>
+  }
+</div>
