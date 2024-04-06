@@ -1,4 +1,4 @@
-.container-app {
+/*.container-app {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,19 +15,20 @@
   min-width: 40vw;
   margin-top: 5vh;
   margin-bottom: 5vh;
-}
+}*/
 
-/* estilo botones */
+/* estilo botones 
 .boton-navegacion {
   height: 5vh;
-}
+}*/
 
 /* estilo contenido en router link*/
 .container-router {
   min-height: 60vh;
+  text-align: center;
 }
 
-/* titulo app */
+/* titulo app 
 .container-app-titulo {
   min-width: 80vw;
   max-width: 80vw;
@@ -35,4 +36,41 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  border-radius: 0 15px 15px 0;
+}*/
+
+.barra-lateral{
+  height: 100%;
+  font-size: 18px;
+}
+
+.container-contenido {
+  text-align: center;
+  background-color: #f2f4f5;
+}
+
+.container-titulo {
+  margin-left: -12px;
+  background-color: #02314d;
+  height: 10vh;
+  color: white;
+  padding-top: 1vh;
+  text-align: center;
+}
+
+.nav-link{
+  color: white;
+}
+
+.nav-link:hover, nav-link:focus{
+  background-color: #045c94;
+  color: #fff;
+  font-size: 23px;
+  text-decoration: solid;
 }

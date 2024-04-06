@@ -1,15 +1,129 @@
+<!--
 <div class="container-app">
   <div class="container-app-titulo">
     <h1>Proyecto Nuevas Tecnologias Computacionales</h1>
   </div>
   <div class="container-dashboard-botones">
-    <button class="boton-navegacion" routerLink="/dashboard">Dashboard</button>
-    <button class="boton-navegacion" routerLink="/temperatura">Temperatura</button>
-    <button class="boton-navegacion" routerLink="/luminosidad">Luminosidad</button>
-    <button class="boton-navegacion" routerLink="/humedad">Humedad</button>
+    <button class="boton-navegacion" routerLink="/dashboard"><i class="bi bi-house"> Dashboard</i></button>
+    <button class="boton-navegacion" routerLink="/temperatura"><i class="bi bi-thermometer-half"> Temperatura</i></button>
+    <button class="boton-navegacion" routerLink="/luminosidad"><i class="bi bi-lightbulb-fill"> Luminosidad</i></button>
+    <button class="boton-navegacion" routerLink="/humedad"><i class="bi bi-cloud"> Humedad</i></button>
   </div>
 
   <div class="container-router">
     <router-outlet/>
+  </div>
+
+</div>
+
+-->
+
+<div class="container-grid">
+  <div class="row">
+    <!--
+    <div class="col-3 sidebar flex-column flex-shrink-0 p-3 text-bg-dark">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <img src="img/logo.jpg" alt="a">
+        <span class="fs-4">Tendencias Computacionales</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-white" aria-current="page">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+            <i class="bi bi-house"> Dashboard</i>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link text-white" routerLink="temperatura">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+            <i class="bi bi-thermometer-half"> Temperatura</i>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link text-white" routerLink="luminosidad">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+            <i class="bi bi-lightbulb-fill"> Luminosidad</i>
+          </a>
+        </li>
+        <hr>
+        <li>
+          <a href="#" class="nav-link text-white" routerLink="humedad">
+            <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+            <i class="bi bi-cloud">  Humedad</i>
+          </a>
+        </li>
+      </ul>
+      <hr>
+    </div>
+    -->
+
+    <div class="row align-items-start">
+      <div class="col-3 barra-lateral flex-column flex-shrink-0 p-3 text-bg-dark">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="margin-left: -7px;">
+          <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <img src="./assets/logo.jpg" alt="utal-logo" style="height: 65px; margin-right: 10px; border-radius: 5%;">
+          <span class="fs-4">Tendencias Computacionales</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="#" class="nav-link text-white" routerLink="dashboard">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
+              <i class="bi bi-house" style="margin-right: 5px;"></i>
+              Dashboard
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="#" class="nav-link text-white" routerLink="temperatura">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+              <i class="bi bi-thermometer-half" style="margin-right: 5px;"></i>
+              Temperatura
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="#" class="nav-link text-white" routerLink="luminosidad">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
+              <i class="bi bi-lightbulb-fill" style="margin-right: 5px;"></i>
+              Luminosidad
+            </a>
+          </li>
+          <hr>
+          <li>
+            <a href="#" class="nav-link text-white" routerLink="humedad">
+              <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
+              <i class="bi bi-cloud" style="margin-right: 5px;"></i>
+              Humedad
+            </a>
+          </li>
+        </ul>
+        <hr>
+      </div>
+      <div class="col container-contenido" >
+        <div class="container-titulo">
+          <h1>Proyecto Nuevas Tecnologias Computacionales</h1>
+        </div>
+        <div class="container-router">
+          <router-outlet/>
+        </div>
+      </div>
+    </div>
+    <!--
+    <div class="col container-contenido">
+      <div class="container-titulo">
+        <h1>Proyecto Nuevas Tecnologías Computacionales</h1>
+      </div>
+
+      <div class="container-router">
+        <router-outlet></router-outlet>
+      </div>
+      <p>kjkdskssss.</p>
+    </div>
+    -->
   </div>
 </div>
