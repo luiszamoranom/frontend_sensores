@@ -2,32 +2,25 @@ import {Component, inject, OnInit} from '@angular/core';
 import {LuminosidadService} from "../../services/luminosidad.service";
 import {ResponseAPI} from "../../dtos/ResponseAPI";
 import {interval, Subject, takeUntil} from "rxjs";
-import {LuminocidadComponent} from "../luminocidad/luminocidad.component";
 
 @Component({
-  selector: 'app-lista-luminosidad',
+  selector: 'app-luminocidad',
   standalone: true,
-  imports: [
-    LuminocidadComponent
-  ],
-  templateUrl: './lista-luminosidad.component.html',
-  styleUrl: './lista-luminosidad.component.css'
+  imports: [],
+  templateUrl: './luminocidad.component.html',
+  styleUrl: './luminocidad.component.css'
 })
-export class ListaLuminosidadComponent implements OnInit{
+export class LuminocidadComponent implements OnInit{
   private _luminosidadService = inject(LuminosidadService)
 
-  protected luminosidades : ResponseAPI[] = []
   protected luminosidad_masReciente: ResponseAPI|undefined = undefined
   protected luminosidad_promedio: number|undefined = undefined
   protected luminosidad_maxima: number|undefined = undefined
-  protected humedad_minima: number|undefined = undefined
+  protected luminosidad_minima: number|undefined = undefined
   private destroy$ = new Subject<void>();
 
   ngOnInit() {
     interval(500).pipe(takeUntil(this.destroy$)).subscribe(() => {
-      this._luminosidadService.fetchAll().subscribe(
-        response => this.luminosidades = response
-      )
 
       this._luminosidadService.fetchMasReciente().subscribe(
         response => this.luminosidad_masReciente = response
@@ -42,7 +35,7 @@ export class ListaLuminosidadComponent implements OnInit{
       )
 
       this._luminosidadService.fetchMinimo().subscribe(
-        response => this.humedad_minima = response
+        response => this.luminosidad_minima = response
       )
     })
   }

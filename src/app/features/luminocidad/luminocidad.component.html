@@ -1,0 +1,77 @@
+<div class="container-metrica-con-tablas">
+
+  <div>
+    @if(luminosidad_masReciente){
+      @if( 0 <= luminosidad_masReciente.valor &&  luminosidad_masReciente.valor <= 300){
+        <img src="./assets/luminosidad/fuerte.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (300 < luminosidad_masReciente.valor &&  luminosidad_masReciente.valor <= 600) {
+        <img src="./assets/luminosidad/alta.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (600 < luminosidad_masReciente.valor &&  luminosidad_masReciente.valor<= 900) {
+        <img src="./assets/luminosidad/media.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (900  < luminosidad_masReciente.valor &&  luminosidad_masReciente.valor<= 1200){
+        <img src="./assets/luminosidad/oscuro.png" alt="Girl in a jacket" width="200" height="200">
+      }
+    }
+  </div>
+
+  <div class="">
+    <table>
+      <tr class="">
+        <th class=""> Estadistica </th>
+        <th class=""> Valor [cd] </th>
+      </tr>
+
+      <tr class="">
+        <td class=""> Más reciente </td>
+        <td class=""> {{ luminosidad_masReciente?.valor }} </td>
+      </tr>
+
+      <tr class="">
+        <td class=""> Promedio </td>
+        <td class=""> {{ luminosidad_promedio }} </td>
+      </tr>
+
+      <tr class="">
+        <td class=""> Mínima </td>
+        <td class=""> {{ luminosidad_minima }} </td>
+      </tr>
+
+      <tr class="">
+        <td class=""> Máxima </td>
+        <td class=""> {{luminosidad_maxima}} </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <div class="">
+    <table>
+      <tr class="">
+        <th class=""> Rango [cd] </th>
+        <th class=""> Ilustración </th>
+      </tr>
+
+      <tr class="">
+        <td class=""> 0 <= cd <= 300 </td>
+        <td class=""> <img src="./assets/luminosidad/fuerte.png" alt="Girl in a jacket" width="25" height="25"> </td>
+      </tr>
+
+      <tr class="">
+        <td class="">  300 < cd <= 600 </td>
+        <td class=""> <img src="./assets/luminosidad/alta.png" alt="Girl in a jacket" width="25" height="25"> </td>
+      </tr>
+
+      <tr class="">
+        <td class=""> 600 < cd <= 900</td>
+        <td class=""> <img src="./assets/luminosidad/media.png" alt="Girl in a jacket" width="25" height="25"> </td>
+      </tr>
+
+      <tr class="">
+        <td class=""> 900 < cd <= 1200 </td>
+        <td class=""> <img src="./assets/luminosidad/oscuro.png" alt="Girl in a jacket" width="25" height="25"> </td>
+      </tr>
+
+    </table>
+  </div>
+
+</div>
