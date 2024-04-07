@@ -12,6 +12,16 @@
   justify-content: space-between;
 }
 
+.container-metrica-con-tablas {
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 
 .container-lista-comun-tabla {
   margin-top: 5vh;
@@ -29,7 +39,6 @@
 }
 
 .columna-en-tabla-comun {
-  min-width: 40vw;
 }
 
 .texto-dentro-de-columna-en-tabla-comun {
