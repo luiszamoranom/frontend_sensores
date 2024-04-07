@@ -5,6 +5,8 @@
   flex-direction: column;
   width: 100vw;
   height: 100vh;
+  background-color: #353956;
+  text-align: center;
 }
 
 .container-dashboard-botones {
@@ -18,8 +20,9 @@
 }
 
 /* estilo botones */
-.boton-navegacion {
-  height: 5vh;
+.btn{
+  background-color: #54668e;
+  color: white;
 }
 
 /* estilo contenido en router link*/
@@ -35,4 +38,10 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.btn:hover{
+  background-color: #e8e8e8;
+  color: black;
+  scale: 1.06;
 }
