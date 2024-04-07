@@ -1,34 +1,46 @@
 <div class="container-metrica-con-tablas">
 
   <div>
-    <img src="./assets/test.jpg" alt="Girl in a jacket" width="200" height="200">
+    @if(temperatura_masReciente){
+      @if( -40 <= temperatura_masReciente.valor &&  temperatura_masReciente.valor <= 0){
+        <img src="./assets/temperatura/nieve.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (0 < temperatura_masReciente.valor &&  temperatura_masReciente.valor <= 10) {
+        <img src="./assets/temperatura/frio.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (10 < temperatura_masReciente.valor &&  temperatura_masReciente.valor<= 20) {
+        <img src="./assets/temperatura/frio.png.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (20  < temperatura_masReciente.valor &&  temperatura_masReciente.valor<= 30){
+        <img src="./assets/temperatura/templado.png" alt="Girl in a jacket" width="200" height="200">
+      } @else if (30 < temperatura_masReciente.valor &&  temperatura_masReciente.valor <= 40){
+        <img src="./assets/temperatura/soleado.png" alt="Girl in a jacket" width="200" height="200">
+      }
+    }
   </div>
 
   <div class="">
     <table>
       <tr class="">
         <th class=""> Estadistica </th>
-        <th class=""> Valor </th>
+        <th class=""> Valor [C°] </th>
       </tr>
 
       <tr class="">
         <td class=""> Más reciente </td>
-        <td class=""> X </td>
+        <td class=""> {{ temperatura_masReciente?.valor }} </td>
       </tr>
 
       <tr class="">
         <td class=""> Promedio </td>
-        <td class=""> X </td>
+        <td class=""> {{ temperatura_promedio }} </td>
       </tr>
 
       <tr class="">
-        <td class=""> Mínimo </td>
-        <td class=""> X </td>
+        <td class=""> Mínima </td>
+        <td class=""> {{ temperatura_minima }} </td>
       </tr>
 
       <tr class="">
         <td class=""> Máximo </td>
-        <td class=""> X </td>
+        <td class=""> {{temperatura_maxima}} </td>
       </tr>
 
     </table>
@@ -37,28 +49,33 @@
   <div class="">
     <table>
       <tr class="">
-        <th class=""> Rango1 </th>
-        <th class=""> Imagen1 </th>
+        <th class=""> Rango [C°]</th>
+        <th class=""> Ilustración </th>
       </tr>
 
       <tr class="">
-        <td class=""> Rango2 </td>
-        <td class=""> imagen2 </td>
+        <td class=""> -40 <= T° <= 0 </td>
+        <td class=""> <img src="./assets/temperatura/nieve.png" alt="Girl in a jacket" width="25" height="25"> </td>
       </tr>
 
       <tr class="">
-        <td class=""> Rango3 </td>
-        <td class=""> imagen3 </td>
+        <td class=""> 0 < T° <= 10 </td>
+        <td class=""> <img src="./assets/temperatura/lluvia.png" alt="Girl in a jacket" width="25" height="25"> </td>
       </tr>
 
       <tr class="">
-        <td class=""> Rango4 </td>
-        <td class=""> imagen4 </td>
+        <td class=""> 10 < T° <= 20 </td>
+        <td class=""> <img src="./assets/temperatura/frio.png" alt="Girl in a jacket" width="25" height="25"> </td>
       </tr>
 
       <tr class="">
-        <td class=""> Rango5 </td>
-        <td class=""> imagen5 </td>
+        <td class=""> 20 < T° <= 30 </td>
+        <td class=""> <img src="./assets/temperatura/templado.png" alt="Girl in a jacket" width="25" height="25"> </td>
+      </tr>
+
+      <tr class="">
+        <td class=""> 30 < T° <= 40 </td>
+        <td class=""> <img src="./assets/temperatura/soleado.png" alt="Girl in a jacket" width="25" height="25"> </td>
       </tr>
 
     </table>
