@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {TemperaturaService} from "../../services/temperatura.service";
 import {ResponseAPI} from "../../dtos/ResponseAPI";
 import {interval, Subject, takeUntil} from "rxjs";
+import {UtilsService} from "../../services/utils.service";
 
 @Component({
   selector: 'app-temperatura',
@@ -12,6 +13,7 @@ import {interval, Subject, takeUntil} from "rxjs";
 })
 export class TemperaturaComponent {
   protected _temperaturaService = inject(TemperaturaService)
+  protected _utilsService = inject(UtilsService)
 
   protected temperatura_masReciente: ResponseAPI|undefined = undefined
   protected temperatura_promedio: number|undefined = undefined

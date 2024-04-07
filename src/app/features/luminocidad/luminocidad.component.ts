@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {LuminosidadService} from "../../services/luminosidad.service";
 import {ResponseAPI} from "../../dtos/ResponseAPI";
 import {interval, Subject, takeUntil} from "rxjs";
+import {UtilsService} from "../../services/utils.service";
 
 @Component({
   selector: 'app-luminocidad',
@@ -12,6 +13,7 @@ import {interval, Subject, takeUntil} from "rxjs";
 })
 export class LuminocidadComponent implements OnInit{
   private _luminosidadService = inject(LuminosidadService)
+  protected _utilsService = inject(UtilsService)
 
   protected luminosidad_masReciente: ResponseAPI|undefined = undefined
   protected luminosidad_promedio: number|undefined = undefined

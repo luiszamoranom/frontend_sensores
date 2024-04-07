@@ -2,6 +2,7 @@ import {Component, inject, OnInit} from '@angular/core';
 import {HumedadService} from "../../services/humedad.service";
 import {ResponseAPI} from "../../dtos/ResponseAPI";
 import {interval, Subject, takeUntil} from "rxjs";
+import {UtilsService} from "../../services/utils.service";
 
 @Component({
   selector: 'app-humedad',
@@ -12,6 +13,7 @@ import {interval, Subject, takeUntil} from "rxjs";
 })
 export class HumedadComponent implements OnInit{
   private _humedadService = inject(HumedadService)
+  protected _utilsService = inject(UtilsService)
 
   protected humedad_masReciente: ResponseAPI|undefined = undefined
   protected humedad_promedio: number|undefined = undefined
