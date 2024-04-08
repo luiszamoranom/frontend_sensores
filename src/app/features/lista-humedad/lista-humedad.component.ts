@@ -16,11 +16,15 @@ import {HumedadComponent} from "../humedad/humedad.component";
   styleUrl: './lista-humedad.component.css'
 })
 export class ListaHumedadComponent implements OnInit{
+  // servicio para acceder a los registros de la metrica
   private _humedadService = inject(HumedadService)
 
+  // dato para almacenar los registros obtenidos del backend
   protected humedades : ResponseAPI[] = []
   private destroy$ = new Subject<void>();
 
+  // al inicializar el componente, cada medio segundo, se obtendran nuevamente
+  // los registros capturados desde el backend
   ngOnInit() {
     interval(500).pipe(takeUntil(this.destroy$)).subscribe(() => {
       this._humedadService.fetchAll().subscribe(

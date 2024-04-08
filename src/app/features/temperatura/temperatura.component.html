@@ -1,5 +1,6 @@
 <div class="container-metrica-con-tablas">
 
+  <!-- condicional para mostrar imagen-->
   <div>
     @if(temperatura_masReciente){
       @if( -40 <= temperatura_masReciente.valor &&  temperatura_masReciente.valor <= 0){
@@ -16,6 +17,7 @@
     }
   </div>
 
+  <!-- tabla para mostrar datos capturados del backend de la metrica -->
   <div class="">
     <table class="table-bordered">
       <tr class="fila-tabla-estadistica">
@@ -46,6 +48,7 @@
     </table>
   </div>
 
+  <!-- tabla para mostrar rangos de imagen para la metrica -->
   <div class="">
     <table class="table-bordered">
       <tr class="fila-tabla-estadistica">

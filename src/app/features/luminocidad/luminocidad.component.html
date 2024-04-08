@@ -1,5 +1,6 @@
 <div class="container-metrica-con-tablas">
 
+  <!-- condicional para mostrar imagen-->
   <div>
     @if(luminosidad_masReciente){
       @if( 0 <= luminosidad_masReciente.valor &&  luminosidad_masReciente.valor <= 300){
@@ -14,6 +15,7 @@
     }
   </div>
 
+  <!-- tabla para mostrar datos capturados del backend de la metrica -->
   <div class="">
     <table class="table-bordered">
       <tr class="fila-tabla-estadistica">
@@ -44,6 +46,7 @@
     </table>
   </div>
 
+  <!-- tabla para mostrar rangos de imagen para la metrica -->
   <div class="">
     <table class="table-bordered">
       <tr class="fila-tabla-estadistica">

@@ -15,35 +15,19 @@ import {TemperaturaComponent} from "../temperatura/temperatura.component";
   styleUrl: './lista-temperatura.component.css'
 })
 export class ListaTemperaturaComponent implements OnInit{
+  // servicio para acceder a los registros de la metrica
   private _temperaturaService = inject(TemperaturaService)
 
+  // dato para almacenar los registros obtenidos del backend
   protected temperaturas : ResponseAPI[] = []
-  protected temperatura_masReciente: ResponseAPI|undefined = undefined
-  protected temperatura_promedio: number|undefined = undefined
-  protected temperatura_maxima: number|undefined = undefined
-  protected temperatura_minima: number|undefined = undefined
   private destroy$ = new Subject<void>();
 
+  // al inicializar el componente, cada medio segundo, se obtendran nuevamente
+  // los registros capturados desde el backend
   ngOnInit() {
     interval(500).pipe(takeUntil(this.destroy$)).subscribe(() => {
       this._temperaturaService.fetchAll().subscribe(
         response => this.temperaturas = response
-      )
-
-      this._temperaturaService.fetchMasReciente().subscribe(
-        response => this.temperatura_masReciente = response
-      )
-
-      this._temperaturaService.fetchPromedio().subscribe(
-        response => this.temperatura_promedio = response
-      )
-
-      this._temperaturaService.fetchMaxima().subscribe(
-        response => this.temperatura_maxima = response
-      )
-
-      this._temperaturaService.fetchMinimo().subscribe(
-        response => this.temperatura_minima = response
       )
     })
   }

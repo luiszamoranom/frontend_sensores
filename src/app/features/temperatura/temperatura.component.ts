@@ -12,15 +12,18 @@ import {UtilsService} from "../../services/utils.service";
   styleUrl: './temperatura.component.css'
 })
 export class TemperaturaComponent {
+  // servicios para acceder a los datos del backend de las metricas
   protected _temperaturaService = inject(TemperaturaService)
   protected _utilsService = inject(UtilsService)
 
+  // datos del backend alojado en variables locales del componente
   protected temperatura_masReciente: ResponseAPI|undefined = undefined
   protected temperatura_promedio: number|undefined = undefined
   protected temperatura_maxima: number|undefined = undefined
   protected temperatura_minima: number|undefined = undefined
   private destroy$ = new Subject<void>();
 
+  // cada vez que se inicialice el componente, cada medio segundo, se actualizaran los datos de dicha metrica
   ngOnInit() {
     interval(500).pipe(takeUntil(this.destroy$)).subscribe(() => {
 

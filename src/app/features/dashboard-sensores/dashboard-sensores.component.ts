@@ -18,6 +18,7 @@ import {LuminocidadComponent} from "../luminocidad/luminocidad.component";
   styleUrl: './dashboard-sensores.component.css'
 })
 export class DashboardSensoresComponent implements OnInit{
+  // servicios para acceder a los datos capturados desde el backend de cada metrica
   private _humedadService = inject(HumedadService)
   private _luminosidadService = inject(LuminosidadService)
   private _temperaturaService = inject(TemperaturaService)

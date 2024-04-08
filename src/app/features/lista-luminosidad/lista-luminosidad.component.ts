@@ -14,35 +14,19 @@ import {LuminocidadComponent} from "../luminocidad/luminocidad.component";
   styleUrl: './lista-luminosidad.component.css'
 })
 export class ListaLuminosidadComponent implements OnInit{
+  // servicio para acceder a los registros de la metrica
   private _luminosidadService = inject(LuminosidadService)
 
+  // dato para almacenar los registros obtenidos del backend
   protected luminosidades : ResponseAPI[] = []
-  protected luminosidad_masReciente: ResponseAPI|undefined = undefined
-  protected luminosidad_promedio: number|undefined = undefined
-  protected luminosidad_maxima: number|undefined = undefined
-  protected humedad_minima: number|undefined = undefined
   private destroy$ = new Subject<void>();
 
+  // al inicializar el componente, cada medio segundo, se obtendran nuevamente
+  // los registros capturados desde el backend
   ngOnInit() {
     interval(500).pipe(takeUntil(this.destroy$)).subscribe(() => {
       this._luminosidadService.fetchAll().subscribe(
         response => this.luminosidades = response
-      )
-
-      this._luminosidadService.fetchMasReciente().subscribe(
-        response => this.luminosidad_masReciente = response
-      )
-
-      this._luminosidadService.fetchPromedio().subscribe(
-        response => this.luminosidad_promedio = response
-      )
-
-      this._luminosidadService.fetchMaxima().subscribe(
-        response => this.luminosidad_maxima = response
-      )
-
-      this._luminosidadService.fetchMinimo().subscribe(
-        response => this.humedad_minima = response
       )
     })
   }

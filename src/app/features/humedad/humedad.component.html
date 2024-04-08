@@ -1,6 +1,7 @@
 <div class="container-metrica-con-tablas">
 
   <div>
+    <!-- condicional para mostrar imagen-->
     @if(humedad_masReciente){
       @if( 0 <= humedad_masReciente.valor &&  humedad_masReciente.valor <= 25){
         <img src="./assets/humedad/baja.png" alt="Girl in a jacket" width="200" height="200">
@@ -14,6 +15,7 @@
     }
   </div>
 
+  <!-- tabla para mostrar datos capturados del backend de la metrica -->
   <div class="">
     <table class="table-bordered">
       <tr class="fila-tabla-estadistica">
@@ -44,6 +46,7 @@
     </table>
   </div>
 
+  <!-- tabla para mostrar rangos de imagen para la metrica -->
   <div class="">
     <table class="table-bordered">
       <tr class="fila-tabla-estadistica">
