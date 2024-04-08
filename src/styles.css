@@ -15,12 +15,13 @@
 .container-metrica-con-tablas {
   min-width: 100vw;
   max-width: 100vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   overflow-x: scroll;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #e8e8e8;
 }
 
 .fila-tabla-estadistica {
@@ -42,15 +43,18 @@
   margin-right: 10vw;
   flex-direction: row;
   width: 80vw;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 }
 
 .fila-en-tabla-comun {
   min-width: 80vw;
   max-width: 80vw;
+  background-color: #f5f6e6;
 }
 
 .columna-en-tabla-comun {
+  min-width: 30vw;
 }
 
 .texto-dentro-de-columna-en-tabla-comun {

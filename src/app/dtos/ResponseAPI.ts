@@ -1,5 +1,5 @@
 export interface ResponseAPI {
-  id: string,
+  id: number,
   valor: number,
   createdAt: string
 }
